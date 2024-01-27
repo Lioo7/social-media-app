@@ -27,6 +27,10 @@ class Database
         }
     }
 
+    public function getConnectionError() {
+        return $this->conn->connect_error;
+    }
+
     public function executeQuery($sql, $params = [])
     {
         $stmt = $this->conn->prepare($sql);
