@@ -1,0 +1,65 @@
+/* Reset default margin and padding */
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styles */
+header {
+    background-color: #3b5998; /* Facebook blue */
+    color: #fff; /* White text color */
+    padding: 20px; /* Add padding to the header */
+    text-align: center; /* Center-align the text */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+/* Header title */
+header h1 {
+    margin: 0; /* Remove default margin */
+    font-size: 24px; /* Larger font size for the title */
+    font-weight: bold; /* Bold font weight */
+}
+
+/* Container for the entire feed */
+.post-container {
+    width: 600px; /* Adjust the width as needed */
+    margin: 20px auto; /* Center the container */
+    font-family: Arial, sans-serif; /* Use a common sans-serif font */
+}
+
+/* Individual post */
+.post {
+    border: 1px solid #ddd; /* Light gray border */
+    margin-bottom: 20px; /* Space between posts */
+    padding: 20px; /* Padding around the post content */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #fff; /* White background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+/* Profile image */
+.post img {
+    width: 50px; /* Adjust the width as needed */
+    height: 50px; /* Adjust the height as needed */
+    border-radius: 50%; /* Make the image round */
+    margin-right: 10px; /* Space between image and text */
+    float: left; /* Float the image to the left */
+}
+
+/* Post title */
+.post-title {
+    font-weight: bold; /* Make the title bold */
+    color: #385898; /* Facebook blue for the title */
+}
+
+/* Post content */
+.post-content {
+    color: #333; /* Darker text color */
+}
+
+/* Post date */
+.post-date {
+    color: #999; /* Lighter text color for the date */
+    font-size: 12px; /* Smaller font size for the date */
+    margin-top: 10px; /* Space between content and date */
+}
