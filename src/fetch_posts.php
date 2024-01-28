@@ -35,7 +35,7 @@ foreach ($posts as $post) {
         ['type' => 's', 'value' => $post['title']],
         ['type' => 's', 'value' => $post['body']],
         ['type' => 's', 'value' => getCurrentDateTime()],
-        ['type' => 'i', 'value' => 1], # Assume that the user is active
+        ['type' => 'i', 'value' => 1],
     ];
 
     // Execute the INSERT statement
