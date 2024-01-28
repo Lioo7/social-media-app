@@ -30,5 +30,8 @@ composer.lock
 *.sublime-project
 *.sublime-workspace
 
+# Images
+images/
+
 # configuration
 config.php
