@@ -24,24 +24,26 @@ $db->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Media Feed</title>
+    <title>Feed</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 
 <header>
-    <h1>Social Media Feed</h1>
+    <h1>Feed</h1>
 </header>
 
 <div class='post-container'>
     <?php foreach ($postResults as $post): ?>
-        <?php $profileImage = '/images/user-profile-image.jpg'; ?>
         <div class='post'>
+            <?php $profileImage = '/images/user-profile-image.jpg'; ?>
             <img src='<?php echo $profileImage; ?>' alt='Profile Photo'>
-            <p><?php echo $post['first_name'] . ' ' . $post['last_name']; ?></p>
-            <p class='post-title'><?php echo $post['title']; ?></p>
-            <p class='post-content'><?php echo $post['content']; ?></p>
-            <p class='post-date'>Posted on: <?php echo $post['creation_date']; ?></p>
+            <div class="post-content">
+                <p class="user-name"><?php echo $post['first_name'] . ' ' . $post['last_name']; ?></p>
+                <p class='post-title'><?php echo $post['title']; ?></p>
+                <p class='post-text'><?php echo $post['content']; ?></p>
+                <p class='post-date'>Posted on: <?php echo $post['creation_date']; ?></p>
+            </div>
         </div>
     <?php endforeach; ?>
 </div>

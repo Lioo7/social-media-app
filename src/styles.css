@@ -46,15 +46,27 @@ header h1 {
     float: left; /* Float the image to the left */
 }
 
+/* Post content */
+.post-content {
+    margin-left: 60px; /* Space for profile image */
+    color: #333; /* Darker text color */
+}
+
+/* User name */
+.user-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
 /* Post title */
 .post-title {
     font-weight: bold; /* Make the title bold */
     color: #385898; /* Facebook blue for the title */
 }
 
-/* Post content */
-.post-content {
-    color: #333; /* Darker text color */
+/* Post text */
+.post-text {
+    margin-bottom: 10px;
 }
 
 /* Post date */
