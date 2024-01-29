@@ -2,9 +2,19 @@
 require_once 'config.php';
 require_once 'Database.php';
 
-function getCurrentDateTime()
+// Generates the current date and time with randomized minutes and seconds
+function getCurrentRandomizedDateTime()
 {
-    return (new DateTime('now', new DateTimeZone('Israel')))->format('Y-m-d H:i:s');
+    $currentDateTime = new DateTime('now', new DateTimeZone('Israel'));
+    
+    // Generate random values for minutes and seconds between 0 and 59
+    $randomMinutes = rand(0, 59);
+    $randomSeconds = rand(0, 59);
+    
+    // Set the minutes and seconds parts of the current datetime to the random values
+    $currentDateTime->setTime($currentDateTime->format('H'), $randomMinutes, $randomSeconds);
+    
+    return $currentDateTime->format('Y-m-d H:i:s');
 }
 
 // Establish database connection
@@ -34,7 +44,7 @@ foreach ($posts as $post) {
         ['type' => 'i', 'value' => $post['userId']],
         ['type' => 's', 'value' => $post['title']],
         ['type' => 's', 'value' => $post['body']],
-        ['type' => 's', 'value' => getCurrentDateTime()],
+        ['type' => 's', 'value' => getCurrentRandomizedDateTime()],
         ['type' => 'i', 'value' => 1],
     ];
 
