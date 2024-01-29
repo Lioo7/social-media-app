@@ -24,6 +24,12 @@ function splitFullName($fullName) {
     return ['first_name' => $firstName, 'last_name' => $lastName];
 }
 
+function generateDate() {
+    $randomDate = date('Y-m-d', mt_rand(strtotime('1950-01-01'), strtotime('2008-01-01')));
+
+    return $randomDate;
+}
+
 
 // Establish database connection
 $db = new Database($dbConfig['host'], $dbConfig['username'], $dbConfig['password'], $dbConfig['database']);
@@ -44,7 +50,7 @@ if ($response === false) {
 $users = json_decode($response, true);
 
 // Prepare SQL INSERT statement for inserting users
-$sql = "INSERT INTO `user` (`first_name`, `last_name`, `email`, `is_active`) VALUES (?, ?, ?, ?)";
+$sql = "INSERT INTO `user` (`first_name`, `last_name`, `email`, `birthdate`, `is_active`) VALUES (?, ?, ?, ?, ?)";
 
 foreach ($users as $user) {
     // Split name into first name and last name
@@ -52,11 +58,15 @@ foreach ($users as $user) {
     $firstName = $nameParts['first_name'];
     $lastName = $nameParts['last_name'];
 
+    // Generate random birthdate for each user
+    $birthdayDate = generateDate();
+
     // Bind parameters for the INSERT statement
     $params = [
         ['type' => 's', 'value' => $firstName],
         ['type' => 's', 'value' => $lastName],
         ['type' => 's', 'value' => $user['email']],
+        ['type' => 's', 'value' => $birthdayDate],
         ['type' => 'i', 'value' => 1],
     ];
 

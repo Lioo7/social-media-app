@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+require_once 'config.php';
 
 class Database
 {
@@ -27,7 +27,7 @@ class Database
         }
     }
 
-    public function getConnectionError() {
+        public function getConnectionError() {
         return $this->conn->connect_error;
     }
 

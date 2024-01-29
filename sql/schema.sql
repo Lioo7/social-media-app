@@ -3,6 +3,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `birthdate` DATE NOT NULL,
   `is_active` boolean NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
