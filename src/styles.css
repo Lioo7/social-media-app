@@ -22,8 +22,33 @@ header h1 {
 
 /* Subheader */
 header h2 {
-    margin: 5px 0; /* Adjust margin */
+    margin: 10px 0; /* Adjust margin */
     font-size: 18px; /* Adjust font size */
+}
+
+/* Navigation bar styles */
+nav ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 20px 0; /* Add space above and below the navigation bar */
+}
+
+nav ul li {
+    display: inline-block; /* Display navigation items inline-block */
+    margin-right: 10px; /* Add space between navigation items */
+}
+
+nav ul li a {
+    color: #fff; /* White text color */
+    text-decoration: none; /* Remove underline from links */
+    padding: 10px 20px; /* Add padding to buttons */
+    background-color: #385898; /* Darker blue background color */
+    border-radius: 5px; /* Add border radius */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+nav ul li a:hover {
+    background-color: #2a436f; /* Darker blue on hover */
 }
 
 /* Container for the entire feed */
@@ -105,4 +130,12 @@ td {
 /* Table cell styles for alternating rows */
 tr:nth-child(even) td {
     background-color: #f2f2f2; /* Light gray background */
+}
+
+/* Footer styles */
+footer {
+    background-color: #3b5998; /* Facebook blue */
+    color: #fff; /* White text color */
+    text-align: center; /* Center-align the text */
+    padding: 20px; /* Add padding to the footer */
 }

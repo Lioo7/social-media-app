@@ -1,41 +1,18 @@
 <?php
-require_once 'config.php';
-require_once 'Database.php';
-
-// Establish database connection
-$db = new Database($dbConfig['host'], $dbConfig['username'], $dbConfig['password'], $dbConfig['database']);
-
-if ($db->getConnectionError()) {
-    die("Connection failed: " . $db->getConnectionError());
-}
-
-// Load the SQL query to fetch latest posts for users with birthday in current month
-$sqlFile = '../sql/latest_posts_for_users_with_birthday_this_month.sql';
-$sql = file_get_contents($sqlFile);
-
-// Execute the SQL query to fetch posts
-$postResults = $db->select($sql);
-
-$db->close();
+require_once 'header.php';
+require_once 'db_connection.php';
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latest Birthday Posts</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
-
-<header>
-    <h1>Social Media</h1>
-    <h2>Latest Birthday Posts 🎉</h2>
-</header>
-
-
 <div class='post-container'>
+    <?php
+    // Load the SQL query to fetch latest posts for users with birthday in current month
+    $sqlFile = '../sql/latest_posts_for_users_with_birthday_this_month.sql';
+    $sql = file_get_contents($sqlFile);
+
+    // Execute the SQL query to fetch posts
+    $postResults = $db->select($sql);
+    ?>
+
     <?php foreach ($postResults as $post): ?>
         <div class='post'>
             <?php $profileImage = '/images/user-profile-image.jpg'; ?>
@@ -50,5 +27,4 @@ $db->close();
     <?php endforeach; ?>
 </div>
 
-</body>
-</html>
+<?php require_once 'footer.php'; ?>
