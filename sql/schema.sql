@@ -16,10 +16,3 @@ CREATE TABLE IF NOT EXISTS `post` (
   `is_active` BOOLEAN NOT NULL,
   FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
 );
-
-CREATE TABLE IF NOT EXISTS `posts_per_hour` (
-  `id` INT PRIMARY KEY AUTO_INCREMENT,
-  `date` DATE NOT NULL,
-  `hour` INT NOT NULL,
-  `post_count` INT NOT NULL
-);
