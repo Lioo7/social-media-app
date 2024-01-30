@@ -14,9 +14,6 @@ It demonstrates basic CRUD operations, database management, API integration, and
 - **Birthday Posts Page**
   ![Birthday Posts](https://i.ibb.co/pRp42bj/Screenshot-2024-01-30-at-15-06-44.png)
 
-## Database Design
-![Database Design](https://i.ibb.co/DWPpf3r/database-design.png)
-
 ## Features
 - Custom Database class for basic CRUD operations
 - Integration with JSONPlaceholder API for fetching data
@@ -42,6 +39,9 @@ It demonstrates basic CRUD operations, database management, API integration, and
 - `.gitignore`: Specifies intentionally untracked files to ignore.
 - `README.md`: This file providing project information.
 - `screenshots`: Directory for storing screenshots of the pages.
+
+## Database Design
+![Database Design](https://i.ibb.co/DWPpf3r/database-design.png)
 
 ### Setup Instructions
 1. Clone the repository.
