@@ -9,10 +9,10 @@ It demonstrates basic CRUD operations, database management, API integration, and
   ![User Feed](https://i.ibb.co/fq8FwPB/Screenshot-2024-01-30-at-15-06-37.png)
 
 - **Birthday Posts Page**
-  ![Dashboard](https://i.ibb.co/qjhwKLW/Screenshot-2024-01-30-at-15-06-41.png)
+  ![Birthday Posts](https://i.ibb.co/qjhwKLW/Screenshot-2024-01-30-at-15-06-41.png)
 
 - **Dashboard Page**
-  ![Birthday Posts](https://i.ibb.co/pRp42bj/Screenshot-2024-01-30-at-15-06-44.png)
+  ![Dashboard](https://i.ibb.co/yy0j5h2/Screenshot-2024-01-30-at-19-46-55.png)
 
 ## Features
 - Custom Database class for basic CRUD operations
