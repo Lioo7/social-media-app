@@ -6,7 +6,7 @@ if ($imageData === false) {
     die("Failed to download the image from the URL.");
 }
 
-$imagePath = "images/user-profile-image.jpg";
+$imagePath = "src/images/user-profile-image.jpg";
 
 // Check if the directory exists, if not, create it
 if (!file_exists(dirname($imagePath))) {

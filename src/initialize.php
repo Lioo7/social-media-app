@@ -7,7 +7,7 @@ function executeSqlFile($filename, $db) {
 }
 
 // Path to the SQL file
-$sqlFile = '../sql/schema.sql';
+$sqlFile = __DIR__ . '/../sql/schema.sql';
 
 // Execute SQL file
 executeSqlFile($sqlFile, $db);

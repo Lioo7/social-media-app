@@ -15,7 +15,7 @@ require_once '../databases/db_connection.php';
 
     <?php foreach ($postResults as $post): ?>
         <div class='post'>
-            <?php $profileImage = '../images/user-profile-image.jpg'; ?>
+        <?php $profileImage = '../images/user-profile-image.jpg'; ?>
             <img src='<?php echo $profileImage; ?>' alt='Profile Photo'>
             <div class="post-content">
                 <p class="user-name"><?php echo $post['first_name'] . ' ' . $post['last_name']; ?></p>
