@@ -1,33 +1,22 @@
 <?php
-require_once 'config.php';
-require_once 'Database.php';
+require_once 'databases/db_connection.php';
 
-// Establish database connection
-$db = new Database($dbConfig['host'], $dbConfig['username'], $dbConfig['password'], $dbConfig['database']);
-
-if ($db->getConnectionError()) {
-    die("Connection failed: " . $db->getConnectionError());
-}
-
+// Execute SQL file using Database class method
 function executeSqlFile($filename, $db) {
-    // Read SQL file
-    $sql = file_get_contents($filename);
-    
-    // Split SQL statements
-    $queries = explode(';', $sql);
-    
-    // Execute each SQL statement
-    foreach ($queries as $query) {
-        $query = trim($query);
-        if (!empty($query)) {
-            $db->executeQuery($query);
-        }
-    }
+    $db->executeSqlFile($filename);
 }
 
+// Path to the SQL file
 $sqlFile = '../sql/schema.sql';
 
+// Execute SQL file
 executeSqlFile($sqlFile, $db);
 
 echo "Database initialized successfully!";
+
+// Fetch the users from the jsonplaceholder
+require_once 'fetch_users.php';
+
+// Fetch the posts from the jsonplaceholder
+require_once 'fetch_posts.php';
 ?>

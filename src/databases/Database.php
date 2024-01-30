@@ -1,6 +1,4 @@
 <?php
-require_once 'config.php';
-
 class Database
 {
     private $host;
@@ -104,6 +102,24 @@ class Database
 
         $stmt->bind_param($types, ...$values);
     }
+
+    public function executeSqlFile($filename)
+    {
+        // Read SQL file
+        $sql = file_get_contents($filename);
+        
+        // Split SQL statements
+        $queries = explode(';', $sql);
+        
+        // Execute each SQL statement
+        foreach ($queries as $query) {
+            $query = trim($query);
+            if (!empty($query)) {
+                $this->executeQuery($query);
+            }
+        }
+    }
+
 }
 
 ?>

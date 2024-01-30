@@ -1,6 +1,5 @@
 <?php
-require_once 'config.php';
-require_once 'Database.php';
+require_once 'databases/db_connection.php';
 
 // Generates the current date and time with randomized hours, minutes, and seconds
 function getCurrentRandomizedDateTime()
@@ -16,13 +15,6 @@ function getCurrentRandomizedDateTime()
     $currentDateTime->setTime($randomHours, $randomMinutes, $randomSeconds);
 
     return $currentDateTime->format('Y-m-d H:i:s');
-}
-
-// Establish database connection
-$db = new Database($dbConfig['host'], $dbConfig['username'], $dbConfig['password'], $dbConfig['database']);
-
-if ($db->getConnectionError()) {
-    die("Connection failed: " . $db->getConnectionError());
 }
 
 // Fetch post data from JSONPlaceholder

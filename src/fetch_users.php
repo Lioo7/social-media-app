@@ -1,6 +1,5 @@
 <?php
-require_once 'config.php';
-require_once 'Database.php';
+require_once 'databases/db_connection.php';
 
 function splitFullName($fullName) {
     // Split name into parts by space
@@ -28,14 +27,6 @@ function generateDate() {
     $randomDate = date('Y-m-d', mt_rand(strtotime('1950-01-01'), strtotime('2008-01-01')));
 
     return $randomDate;
-}
-
-
-// Establish database connection
-$db = new Database($dbConfig['host'], $dbConfig['username'], $dbConfig['password'], $dbConfig['database']);
-
-if ($db->getConnectionError()) {
-    die("Connection failed: " . $db->getConnectionError());
 }
 
 // Fetch user data from JSONPlaceholder
