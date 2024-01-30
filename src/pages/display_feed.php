@@ -1,12 +1,12 @@
 <?php
-require_once 'header.php';
-require_once 'db_connection.php';
+require_once '../includes/header.php';
+require_once '../databases/db_connection.php';
 ?>
 
 <div class='post-container'>
     <?php
     // Load the SQL query to fetch posts of all active users
-    $sqlFile = '../sql/active_users_and_posts.sql';
+    $sqlFile = '../../sql/active_users_and_posts.sql';
     $sql = file_get_contents($sqlFile);
 
     // Execute the SQL query to fetch posts
@@ -27,4 +27,4 @@ require_once 'db_connection.php';
     <?php endforeach; ?>
 </div>
 
-<?php require_once 'footer.php'; ?>
+<?php require_once '../includes/footer.php'; ?>

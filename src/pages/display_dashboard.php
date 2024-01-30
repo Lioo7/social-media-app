@@ -1,9 +1,9 @@
 <?php
-require_once 'header.php';
-require_once 'db_connection.php';
+require_once '../includes/header.php';
+require_once '../databases/db_connection.php';
 
 // Fetch post counts by date and hour
-$sqlFile = '../sql/count_posts_by_date_and_hour.sql';
+$sqlFile = '../../sql/count_posts_by_date_and_hour.sql';
 $sql = file_get_contents($sqlFile);
 
 // Execute the SQL query to fetch post counts
@@ -28,4 +28,4 @@ $postCounts = $db->select($sql);
     </table>
 </div>
 
-<?php require_once 'footer.php'; ?>
+<?php require_once '../includes/footer.php'; ?>
