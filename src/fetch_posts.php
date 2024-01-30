@@ -2,18 +2,19 @@
 require_once 'config.php';
 require_once 'Database.php';
 
-// Generates the current date and time with randomized minutes and seconds
+// Generates the current date and time with randomized hours, minutes, and seconds
 function getCurrentRandomizedDateTime()
 {
     $currentDateTime = new DateTime('now', new DateTimeZone('Israel'));
-    
-    // Generate random values for minutes and seconds between 0 and 59
+
+    // Generate random values for hours, minutes, and seconds between 0 and 23, 0 and 59, and 0 and 59 respectively
+    $randomHours = rand(0, 23);
     $randomMinutes = rand(0, 59);
     $randomSeconds = rand(0, 59);
-    
-    // Set the minutes and seconds parts of the current datetime to the random values
-    $currentDateTime->setTime($currentDateTime->format('H'), $randomMinutes, $randomSeconds);
-    
+
+    // Set the hours, minutes, and seconds parts of the current datetime to the random values
+    $currentDateTime->setTime($randomHours, $randomMinutes, $randomSeconds);
+
     return $currentDateTime->format('Y-m-d H:i:s');
 }
 
