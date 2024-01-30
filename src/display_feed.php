@@ -30,7 +30,8 @@ $db->close();
 <body>
 
 <header>
-    <h1>Feed</h1>
+    <h1>Social Media</h1>
+    <h2>Feed 📰</h2>
 </header>
 
 <div class='post-container'>

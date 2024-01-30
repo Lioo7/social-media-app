@@ -13,11 +13,17 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
-/* Header title */
+/* Main header */
 header h1 {
     margin: 0; /* Remove default margin */
     font-size: 24px; /* Larger font size for the title */
     font-weight: bold; /* Bold font weight */
+}
+
+/* Subheader */
+header h2 {
+    margin: 5px 0; /* Adjust margin */
+    font-size: 18px; /* Adjust font size */
 }
 
 /* Container for the entire feed */

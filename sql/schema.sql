@@ -1,22 +1,25 @@
 CREATE TABLE IF NOT EXISTS `user` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `first_name` varchar(255) NOT NULL,
-  `last_name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `id` INT PRIMARY KEY AUTO_INCREMENT,
+  `first_name` VARCHAR(255) NOT NULL,
+  `last_name` VARCHAR(255) NOT NULL,
+  `email` VARCHAR(255) NOT NULL,
   `birthdate` DATE NOT NULL,
-  `is_active` boolean NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`)
+  `is_active` BOOLEAN NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS `post` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `user_id` int NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `content` text NOT NULL,
-  `creation_date` datetime NOT NULL,
-  `is_active` boolean NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`),
-  CONSTRAINT `fk_post_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
+  `id` INT PRIMARY KEY AUTO_INCREMENT,
+  `user_id` INT NOT NULL,
+  `title` VARCHAR(255) NOT NULL,
+  `content` TEXT NOT NULL,
+  `creation_date` DATETIME NOT NULL,
+  `is_active` BOOLEAN NOT NULL,
+  FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
+);
+
+CREATE TABLE IF NOT EXISTS `posts_per_hour` (
+  `id` INT PRIMARY KEY AUTO_INCREMENT,
+  `date` DATE NOT NULL,
+  `hour` INT NOT NULL,
+  `post_count` INT NOT NULL,
 );

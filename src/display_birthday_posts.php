@@ -30,8 +30,10 @@ $db->close();
 <body>
 
 <header>
-    <h1>Latest Birthday Posts</h1>
+    <h1>Social Media</h1>
+    <h2>Latest Birthday Posts 🎉</h2>
 </header>
+
 
 <div class='post-container'>
     <?php foreach ($postResults as $post): ?>
